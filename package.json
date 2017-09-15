@@ -1,12 +1,20 @@
 {
   "name": "koa-openid",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "koa openid plugin",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "wangsong",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wangsong3635/koa-openid.git"
+  },
+  "keywords": [
+    "Koa",
+    "openid"
+  ],
+  "author": "soonwang",
   "license": "MIT",
   "dependencies": {
     "jwt-simple": "^0.5.1",

@@ -3,7 +3,7 @@
 ## Installation
 
 ```js
-$ npm i
+    npm i koa-openid -S
 ```
 
 ## Example
