@@ -1,6 +1,6 @@
 {
   "name": "koa-openid",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "koa openid plugin",
   "main": "index.js",
   "scripts": {
