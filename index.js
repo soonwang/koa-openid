@@ -1,9 +1,9 @@
 /**
  * netease auth koa plugins
  */
- import {URLSearchParams} from 'url';
- import fetch from 'node-fetch';
- import jwt from 'jwt-simple';
+ const {URLSearchParams} = require('url');
+ const fetch = require('node-fetch');
+ const jwt = require('jwt-simple');
 
  function str2base64(str) {
      return new Buffer(str).toString('base64');
@@ -117,4 +117,4 @@ class KoaOpenid {
     }
 }
 
-export default KoaOpenid;
+module.exports = KoaOpenid;

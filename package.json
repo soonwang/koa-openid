@@ -18,6 +18,6 @@
   "license": "MIT",
   "dependencies": {
     "jwt-simple": "^0.5.1",
-    "node-fetch": "^1.7.3"
+    "node-fetch": "next"
   }
 }
