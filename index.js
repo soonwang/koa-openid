@@ -1,7 +1,6 @@
 /**
  * netease auth koa plugins
  */
- const {URLSearchParams} = require('url');
  const fetch = require('node-fetch');
  const jwt = require('jwt-simple');
 
@@ -11,14 +10,11 @@
 
  async function fetchToken(code, config) {
      const url = config.token_uri;
-     const params = new URLSearchParams();
-     params.append('grant_type', 'authorization_code');
-     params.append('code', code);
-     params.append('redirect_uri', config.redirect_uri);
-
+     const params = `grant_type=authorization_code&code=${code}&redirect_uri=${config.redirect_uri}`;
      const authorization = `${config.client_id}:${config.client_secret}`;
      const authorizationBase64 = str2base64(authorization);
      const headers = {
+         'Content-Type': 'application/x-www-form-urlencoded',
          'Authorization': `Basic ${authorizationBase64}`
      };
      const res = await fetch(url, {
