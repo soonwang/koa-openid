@@ -2,8 +2,9 @@
   "name": "koa-openid",
   "version": "0.1.3",
   "description": "koa openid plugin",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
+    "build": "babel src -d dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,5 +20,10 @@
   "dependencies": {
     "jwt-simple": "^0.5.1",
     "node-fetch": "next"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1"
   }
 }
