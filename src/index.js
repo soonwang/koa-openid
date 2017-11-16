@@ -75,7 +75,7 @@ class KoaOpenid {
         }
         this.config = Object.assign({}, defaultConfig, config);
     }
-    async goLogin(ctx, next) {
+    getLoginURL() {
         const params = {
             response_type: 'code',
             scope: this.config.scope,
@@ -83,7 +83,10 @@ class KoaOpenid {
             redirect_uri: this.config.redirect_uri
         };
         const paramsStr = Object.entries(params).map(arr => `${arr[0]}=${arr[1]}`).join('&');
-        return ctx.redirect(`${this.config.authorize_uri}?${paramsStr}`)
+        return `${this.config.authorize_uri}?${paramsStr}`;
+    }
+    async goLogin(ctx, next) {
+        return ctx.redirect(this.getLoginURL());
     }
     async getUserInfo(ctx, next, cb) {
         const code = ctx.query.code;
