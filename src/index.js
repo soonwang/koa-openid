@@ -88,7 +88,7 @@ class KoaOpenid {
     async goLogin(ctx, next) {
         return ctx.redirect(this.getLoginURL());
     }
-    async getUserInfo(ctx, next, cb) {
+    async getUserInfo(ctx, cb) {
         const code = ctx.query.code;
         let nextParams = {};
         if (ctx.query.error) {
@@ -112,7 +112,7 @@ class KoaOpenid {
                 }
             }
         }
-        cb.call(ctx, nextParams);
+        typeof cb === 'function' && cb.call(ctx, nextParams);
         return nextParams;
     }
 }
