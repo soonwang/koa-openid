@@ -113,6 +113,7 @@ class KoaOpenid {
             }
         }
         cb.call(ctx, nextParams);
+        return nextParams;
     }
 }
 
